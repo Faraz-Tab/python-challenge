@@ -2,12 +2,6 @@
 import os
 import csv
 
-# defining a function called 'winner that takes 3 arguments and declares a winner and returns the result
-
-
-
-
-
 # we set the path to our csv file 
 file_path = os.path.join("Resources", "election_data.csv")
 
@@ -38,12 +32,13 @@ for id in range(len(rows)):
     elif rows[id][2] == "Raymon Anthony Doane":
         voters_id['Raymon Anthony Doane'].append(rows[id][0])
 
-# creating a dictionary that stores the names of candidates with their number of votes achived
-# in lists
+
+
+# creating a dictionary that stores the names of candidates with their number of votes achived in lists
 new_list = {"names": ["Charles Casper Stockham", "Diana DeGette", "Raymon Anthony Doane"],
             "number_of_votes":[len(voters_id["Charles Casper Stockham"]), len(voters_id["Diana DeGette"]), len(voters_id["Raymon Anthony Doane"])]}
 
-# creating a list to store the winner(s) and if there is only one winner, transforms the list
+# creating a list to store the winner(s) and if there is only one winner, casts the list
 # into a single name 
 winners = []
 max_votes = max(new_list["number_of_votes"])
@@ -54,8 +49,6 @@ for name in range(len(new_list['names'])):
 if len(winners) == 1:
     winners = winners[0]
 print(winners)
-
-
 
 
 
@@ -70,6 +63,8 @@ print(f'Raymon Anthony Doane: {"%.3f"%((len(voters_id["Raymon Anthony Doane"]) /
 print("-------------------------")
 print(f'Winner: {winners}')
 print("-------------------------")
+
+
 
 text_path = os.path.join("analysis", "results.txt")
 
